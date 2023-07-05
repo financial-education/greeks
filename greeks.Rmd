@@ -38,7 +38,7 @@ $d_2 = d_1 - \sigma\sqrt(T)$
 
 - $S_0$:  the value of the call option at time 0.
 
-- $N()$:  the cumulative standard normal density function (NORMSDIST() in Excel)
+- $N()$:  the cumulative standard normal density function (`NORMSDIST()` in Excel)
 
 - $X$:  the exercise or strike price.
 
@@ -48,7 +48,7 @@ $d_2 = d_1 - \sigma\sqrt(T)$
 
 - $\sigma$: the annualized standard deviations of log returns.
 
--  $e$ and $ln$ are the exponential and natural log functions respectively (EXP() and LN() in Excel).
+-  $e$ and $ln$ are the exponential and natural log functions respectively (`EXP()` and `LN()` in Excel).
 </div>
 
  
@@ -1252,8 +1252,6 @@ $V = S_0\sqrt(T)N'(D_1)$
  
 
 ##
-
-<div><style="height:-2cm;"></div> 
 
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
