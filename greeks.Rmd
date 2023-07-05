@@ -1,7 +1,14 @@
 ---
 title: "The Greeks"
-author: "[GitHub Contributors](https://github.com/FinancialMarkets/5MinuteFinance/graphs/contributors)"
-output: ioslides_presentation
+author: Matt Brigida
+output: 
+  html_document:
+    rmdformats::downcute:
+      self_contained: true
+      thumbnails: false
+      lightbox: true
+      gallery: false
+      highlight: tango
 runtime: shiny
 ---
 
@@ -15,10 +22,6 @@ Broadly, the Greeks measure the sensitivity of an option's premium to changes in
 -  This means the underlying variables are the follwing: the stock price, volatility, the risk-free rate, and time.
 
 -  Note, each Greek (being a partial derivative of the Black-Scholes equation) assumes all other variables remain constant.  The Black-Scholes equation for the premium of a European call option is shown on the next slide.
-
-
-
- 
 
 ## Black-Scholes Formula: 
 
