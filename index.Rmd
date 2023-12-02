@@ -1,0 +1,217 @@
+---
+title: "The Greeks"
+author: Matt Brigida
+output: 
+  html_document:
+    rmdformats::downcute:
+      self_contained: true
+      thumbnails: false
+      lightbox: true
+      gallery: false
+      highlight: tango
+---
+
+
+## What are the Greeks?
+
+Broadly, the Greeks measure the sensitivity of an option's premium to changes in the underlying variables. They are necessary for determining how to properly hedge a portfolio and are therefore important for risk management.
+
+-  In this presentation we'll cover Greeks in the [Black-Scholes](https://micfm.shinyapps.io/black_scholes) world.  This means we are assuming options are European on a non-dividend paying stock.  It also assumes the underlying stock follows a geometric Brownian motion process.
+
+-  This means the underlying variables are the follwing: the stock price, volatility, the risk-free rate, and time.
+
+-  Note, each Greek (being a partial derivative of the Black-Scholes equation) assumes all other variables remain constant.  The Black-Scholes equation for the premium of a European call option is shown on the next slide.
+
+## Black-Scholes Formula: 
+
+- $Call_0 = S_0N(d_1) - Xe^{-rT}N(d_2)$
+- $Put_0 = N(-d_2)Ke^{-r(T-t)} - N(-d_1)S_0$
+
+<div class ="columns-2">
+
+*where*
+
+$d_1 = \frac{ln(\frac{S_0}{X}) + (r+\frac{\sigma^2}{2})T}{\sigma\sqrt(T)}$
+
+$d_2 = d_1 - \sigma\sqrt(T)$
+
+- $S_0$:  the value of the call option at time 0.
+
+- $N()$:  the cumulative standard normal density function (`NORMSDIST()` in Excel)
+
+- $X$:  the exercise or strike price.
+
+- $r$: the risk-free interest rate (annualized).
+
+-  $T$: the time until option expiration in years.
+
+- $\sigma$: the annualized standard deviations of log returns.
+
+-  $e$ and $ln$ are the exponential and natural log functions respectively (`EXP()` and `LN()` in Excel).
+</div>
+
+ 
+
+
+##  Greeks
+
+Let $P$ refer to the equation for either a call or put option premium.  Then the *greeks* are defined as:
+
+Delta ($\Delta = \frac{\partial P}{\partial S}$):  Where $S$ is the stock price.
+
+Gamma ($\Gamma = \frac{\partial^2 P}{\partial S^2}$): Where $S$ is the stock price.
+
+Theta ($\Theta = \frac{\partial P}{\partial t}$):  Where $t$ is time.
+
+Rho ($\rho = \frac{\partial P}{\partial r_f}$): Where $r_f$ is the risk-free rate.
+
+Vega ($v = \frac{\partial P}{\partial \sigma}$) (Not Greek): Where $\sigma$ is volatility.
+
+## Delta:\ \ \    $\frac{\partial P}{\partial S}$
+
+Delta is the rate of change on the option's price with respect to changes in the price of the underlying asset (stock).  For a call option the Delta is:
+
+$\Delta = N(d_1)$
+
+where $N()$ is the standard cumulative normal density function. The Delta for a put is:
+
+$\Delta = N(d_1) - 1$
+
+##
+
+Delta is very useful, because it is the number of shares to buy (or sell) to hedge out the risk of changes in the  underlying stock's price when short a call (or put) option.
+
+-  In other words, if you have a portfolio short 1 call option and long Delta shares of stock, then your portfolio is riskless (over very short time periods).  This is referred to as *delta hedging*.
+
+-  Similarly, a portfolio short one put and short Detla shares of stock is riskless.
+
+-  Call Deltas range from 0 to 1, and put Deltas range from -1 to 0. 
+
+ 
+
+
+## Interactive Apps
+
+This presentation contains interactive apps for each Greek -- on the following slide is the app for an option's Delta.
+
+-  Each app will allow you to graph the variation of a Greek, where you can choose the variable on the horizontal axis. You can also change the other inputs into the option pricing model and see how this affects the relationship.
+
+-  Many of the relationships are greatly affected by the [moneyness](https://en.wikipedia.org/wiki/Moneyness) of the option, so first try changing the stock or strike price. 
+
+##
+
+[TODO: Insert app in iframe here.]
+
+## Gamma:\ \ \    $\frac{\partial^2 P}{\partial S^2}$
+
+Gamma is the rate of change of the option's Delta with respect to changes in the underlying stock. Gamma for a *both* a call and put is:
+
+$\Gamma = \frac{N'(D_1)}{S_0 \sigma \sqrt(T)}$
+
+- The higher the Gamma (in absolute value) the more often you'll need to rebalance a delta-neutral portfolio.
+
+Suppose the Gamma of a call option on a stock is 0.03.
+
+-  This means that a \$1 increase in the stock's price will increase the Delta of the option by 0.03.
+
+To create a Gamma-neutral portfolio, you'll have to trade in an option on the underlying stock -- or some derivative which is not linearly related to the underlying stock.
+
+## 
+
+[TODO: Insert app in iframe here.]
+
+## Theta:\ \ \    $\Theta = \frac{\partial P}{\partial t}$
+
+Theta is the rate of change of the option premium with respect to time.  It is also known as the option's *time decay*.  Theta for a call is:
+
+$\Theta = -\frac{S_0 N'(d_1) \sigma}{2\sqrt(T)}-rXe^{-rT} N(d_2)$
+
+and for a put is:
+
+$\Theta = -\frac{S_0 N'(d_1) \sigma}{2\sqrt(T)} + rXe^{-rT} N(-d_2)$
+
+##
+
+Theta is usually negative, which means as time passes the option's premium declines (all other variables held constant).
+
+-  Theta is calculated in years, but if we divide theta by 252, we get the daily decline in the option premium solely due to time decay.
+
+-  For example, say Theta is -25, then in days Theta is $\frac{-25}{252} = -0.09921$ which means all else constant, the option's price will decline by \$0.09921 per day.
+
+-  Theta is often quoted as this time decay per day (-0.9921 above).
+
+-  Use the following app to find the situation for which theta is positive?  Hint: when does an option's value decline with increased time to expiration?
+
+##
+
+[TODO: Insert app in iframe here.]
+
+
+## Rho:\ \ \    $\rho = \frac{\partial P}{\partial r_f}$
+
+Rho is the rate of change of the option premium with respect to the risk-free rate. Rho for a call is:
+
+$\rho = XTe^{-rT}N(d_2)$
+
+and for a put is:
+
+$\rho = -XTe^{-rT}N(-d_2)$
+
+##
+
+Rho measures the sensitivity of the option value to interest rates.
+
+-  For example, say for a put option Rho is -30.
+
+-  Then, if the risk-free rate increases by 1\%, the option's value will decline by $1\% \times 30 = \$0.30$
+
+-  Often Rho is simply quoted as the change in the option's price for each 1\% change in the risk-free rate (the 0.30 above).
+
+##
+
+[TODO: Insert app in iframe here.]
+
+
+## Vega:\ \ \    $\frac{\partial P}{\partial \sigma}$
+
+Vega is the rate of change of the option premium with respect to the volatility of the underlying asset. Note, the Black-Scholes model assumes volatility is constant--so there is a contradiction in deriving Vega from the Black-Scholes model.
+
+-  More appropriately, we should calculate Vega from a stochastic volatility model, but in practice Vega from Black-Scholes is very similar to Vega from stochastic volatility models.
+
+Vega for *both* a call and put is:
+
+$V = S_0\sqrt(T)N'(D_1)$
+
+##
+
+-  The higher Vega is in absolute value, the more sensitive the option's price is to changes in volatility.
+
+-  The Vega of a long position in a call or put option is positive.
+
+-  The Vega of an at-the-money option decreases as expiration approaches.
+
+-  If the Vega of a put option is 40, then a 1\% increase in volatility increases the value of the option by $1\% \times 40 = \$0.40$.
+
+-  Often Vega is simply quoted as the change in the option's price for each 1\% change in volatility (the 0.40 above).
+
+##
+
+[TODO: Insert app in iframe here.]
+
+<!---
+## Why are the Greeks Important?
+
+Firstly, the Black-Scholes model relies on an replication argument.  We replicate the call option by creating a portfolio of a bond and stock which behaves exactly like the option.
+
+-  The option must then cost the same as this replicating portfolio.
+
+-  The Greeks tell us the proportion of stock and bond to have in the replicating portfolio, and how much this proportion will change given changes in the underlying stock.
+
+## Other Uses of the Greeks
+
+-->
+
+
+<!--- app: calculate all greeks -->
+
+<!--- app: 3D graphic of call price where you can change the variable on the two axes. --> 
