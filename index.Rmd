@@ -100,7 +100,14 @@ This presentation contains interactive apps for each Greek -- on the following s
 
 ##
 
-[TODO: Insert app in iframe here.]
+[TODO: Insert Shiny app in iframe here.]
+
+##
+
+<!---
+Maybe write a greeks calculator in javascript using the following math library:
+https://github.com/stdlib-js/stdlib#umd
+-->
 
 ## Gamma:\ \ \    $\frac{\partial^2 P}{\partial S^2}$
 
