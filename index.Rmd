@@ -3,13 +3,21 @@ title: "The Greeks"
 author: Matt Brigida
 output: 
   html_document:
+    theme: flatly
+    toc: yes
+    toc_float:
+      collapsed: true
+---	
+
+
+<!---
     rmdformats::downcute:
       self_contained: true
       thumbnails: false
       lightbox: true
       gallery: false
       highlight: tango
----
+-->
 
 
 ## What are the Greeks?
@@ -50,9 +58,6 @@ $d_2 = d_1 - \sigma\sqrt(T)$
 -  $e$ and $ln$ are the exponential and natural log functions respectively (`EXP()` and `LN()` in Excel).
 </div>
 
- 
-
-
 ##  Greeks
 
 Let $P$ refer to the equation for either a call or put option premium.  Then the *greeks* are defined as:
@@ -67,6 +72,15 @@ Rho ($\rho = \frac{\partial P}{\partial r_f}$): Where $r_f$ is the risk-free rat
 
 Vega ($v = \frac{\partial P}{\partial \sigma}$) (Not Greek): Where $\sigma$ is volatility.
 
+## Interactive Apps
+
+This presentation contains interactive apps for each Greek -- on the following slide is the app for an option's Delta.
+
+-  Each app will allow you to graph the variation of a Greek, where you can choose the variable on the horizontal axis. You can also change the other inputs into the option pricing model and see how this affects the relationship.
+
+-  Many of the relationships are greatly affected by the [moneyness](https://en.wikipedia.org/wiki/Moneyness) of the option, so first try changing the stock or strike price. 
+
+
 ## Delta:\ \ \    $\frac{\partial P}{\partial S}$
 
 Delta is the rate of change on the option's price with respect to changes in the price of the underlying asset (stock).  For a call option the Delta is:
@@ -77,8 +91,6 @@ where $N()$ is the standard cumulative normal density function. The Delta for a 
 
 $\Delta = N(d_1) - 1$
 
-##
-
 Delta is very useful, because it is the number of shares to buy (or sell) to hedge out the risk of changes in the  underlying stock's price when short a call (or put) option.
 
 -  In other words, if you have a portfolio short 1 call option and long Delta shares of stock, then your portfolio is riskless (over very short time periods).  This is referred to as *delta hedging*.
@@ -87,20 +99,7 @@ Delta is very useful, because it is the number of shares to buy (or sell) to hed
 
 -  Call Deltas range from 0 to 1, and put Deltas range from -1 to 0. 
 
- 
-
-
-## Interactive Apps
-
-This presentation contains interactive apps for each Greek -- on the following slide is the app for an option's Delta.
-
--  Each app will allow you to graph the variation of a Greek, where you can choose the variable on the horizontal axis. You can also change the other inputs into the option pricing model and see how this affects the relationship.
-
--  Many of the relationships are greatly affected by the [moneyness](https://en.wikipedia.org/wiki/Moneyness) of the option, so first try changing the stock or strike price. 
-
-##
-
-[TODO: Insert Shiny app in iframe here.]
+<iframe width="100%" height="500px" src="https://ztranche.com/investments/options/greeks/delta/"></iframe> 
 
 ##
 

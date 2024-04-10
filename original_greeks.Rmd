@@ -205,7 +205,7 @@ sidebarLayout(
                 ## names(data) <- c("Stock Price", "Delta")
                 tmp %>%
                     mjs_plot(x = Stock.Price, y = Call.Delta) %>%
-                        mjs_line() %>%
+                        mjs_line(area=TRUE) %>%
                             mjs_labs(x="STOCK PRICE", y="CALL DELTA") %>%
                                 mjs_add_legend(legend = c("Delta"))
                 
@@ -221,7 +221,7 @@ sidebarLayout(
                     ## names(data) <- c("Stock Price", "Delta")
                     tmp %>%
                         mjs_plot(x = Stock.Price, y = Put.Delta) %>%
-                            mjs_line() %>%
+                            mjs_line(area=TRUE) %>%
                                 mjs_labs(x="STOCK PRICE", y="PUT DELTA") %>%
                                     mjs_add_legend(legend = c("Delta"))
                     
@@ -236,7 +236,7 @@ sidebarLayout(
                         tmp <- data.frame(Strike.Price = as.numeric(strike), Call.Delta = as.numeric(delta.c()))
                         tmp %>%
                             mjs_plot(x = Strike.Price, y = Call.Delta) %>%
-                                mjs_line() %>%
+                                mjs_line(area=TRUE) %>%
                                     mjs_labs(x="STRIKE PRICE", y="CALL DELTA")
                         
                     } else {
@@ -250,7 +250,7 @@ sidebarLayout(
                             tmp <- data.frame(Strike.Price = as.numeric(strike), Put.Delta = as.numeric(delta.p()))
                             tmp %>%
                                 mjs_plot(x = Strike.Price, y = Put.Delta) %>%
-                                    mjs_line() %>%
+                                    mjs_line(area=TRUE) %>%
                                         mjs_labs(x="STRIKE PRICE", y="PUT DELTA") %>%
                                             mjs_add_legend(legend = c("Delta"))
 
@@ -266,7 +266,7 @@ sidebarLayout(
                                 tmp <- data.frame(Volatility = as.numeric(vol), Call.Delta = as.numeric(delta.c()))
                                 tmp %>%
                                     mjs_plot(x = Volatility, y = Call.Delta) %>%
-                                        mjs_line() %>%
+                                        mjs_line(area=TRUE) %>%
                                             mjs_labs(x="VOLATILITY", y="CALL DELTA") %>%
                                                 mjs_add_legend(legend = c("Delta"))
 
@@ -282,7 +282,7 @@ sidebarLayout(
                                     tmp <- data.frame(Volatility = as.numeric(vol), Put.Delta = as.numeric(delta.p()))
                                     tmp %>%
                                         mjs_plot(x = Volatility, y = Put.Delta) %>%
-                                            mjs_line() %>%
+                                            mjs_line(area=TRUE) %>%
                                                 mjs_labs(x="VOLATILITY", y="PUT DELTA") %>%
                                                     mjs_add_legend(legend = c("Delta"))
 
@@ -298,7 +298,7 @@ sidebarLayout(
                                         tmp <- data.frame(Risk_Free = as.numeric(rf), Call.Delta = as.numeric(delta.c()))
                                         tmp %>%
                                             mjs_plot(x = Risk_Free, y = Call.Delta) %>%
-                                                mjs_line() %>%
+                                                mjs_line(area=TRUE) %>%
                                                     mjs_labs(x="RISK-FREE", y="CALL DELTA") %>%
                                                         mjs_add_legend(legend = c("Delta"))
 
@@ -314,7 +314,7 @@ sidebarLayout(
                                             tmp <- data.frame(Risk_Free = as.numeric(rf), Put.Delta = as.numeric(delta.p()))
                                             tmp %>%
                                                 mjs_plot(x = Risk_Free, y = Put.Delta) %>%
-                                                    mjs_line() %>%
+                                                    mjs_line(area=TRUE) %>%
                                                         mjs_labs(x="RISK-FREE", y="PUT DELTA") %>%
                                                             mjs_add_legend(legend = c("Delta"))
 
@@ -330,7 +330,7 @@ sidebarLayout(
                                                 tmp <- data.frame(Time = as.numeric(time), Call.Delta = as.numeric(delta.c()))
                                                 tmp %>%
                                                     mjs_plot(x = Time, y = Call.Delta) %>%
-                                                        mjs_line() %>%
+                                                        mjs_line(area=TRUE) %>%
                                                             mjs_labs(x="TIME", y="CALL DELTA") %>%
                                                                 mjs_add_legend(legend = c("Delta"))
 
@@ -346,7 +346,7 @@ sidebarLayout(
                                                     tmp <- data.frame(Time = as.numeric(time), Put.Delta = as.numeric(delta.p()))
                                                     tmp %>%
                                                         mjs_plot(x = Time, y = Put.Delta) %>%
-                                                            mjs_line() %>%
+                                                            mjs_line(area=TRUE) %>%
                                                                 mjs_labs(x="TIME", y="PUT DELTA") %>%
                                                                     mjs_add_legend(legend = c("Delta"))
 
@@ -484,7 +484,7 @@ sidebarLayout(
                 ## names(data) <- c("Stock Price", "Gamma")
                 tmp %>%
                     mjs_plot(x = Stock.Price, y = Call.Gamma) %>%
-                        mjs_line() %>%
+                        mjs_line(area=TRUE) %>%
                             mjs_labs(x="STOCK PRICE", y="CALL GAMMA") %>%
                                 mjs_add_legend(legend = c("Gamma"))
                 
@@ -500,7 +500,7 @@ sidebarLayout(
                     ## names(data) <- c("Stock Price", "Gamma")
                     tmp %>%
                         mjs_plot(x = Stock.Price, y = Put.Gamma) %>%
-                            mjs_line() %>%
+                            mjs_line(area=TRUE) %>%
                                 mjs_labs(x="STOCK PRICE", y="PUT GAMMA") %>%
                                     mjs_add_legend(legend = c("Gamma"))
                     
@@ -515,7 +515,7 @@ sidebarLayout(
                         tmp <- data.frame(Strike.Price = as.numeric(strike), Call.Gamma = as.numeric(gamma()))
                         tmp %>%
                             mjs_plot(x = Strike.Price, y = Call.Gamma) %>%
-                                mjs_line() %>%
+                                mjs_line(area=TRUE) %>%
                                     mjs_labs(x="STRIKE PRICE", y="CALL GAMMA")
                         
                     } else {
@@ -529,7 +529,7 @@ sidebarLayout(
                             tmp <- data.frame(Strike.Price = as.numeric(strike), Put.Gamma = as.numeric(gamma()))
                             tmp %>%
                                 mjs_plot(x = Strike.Price, y = Put.Gamma) %>%
-                                    mjs_line() %>%
+                                    mjs_line(area=TRUE) %>%
                                         mjs_labs(x="STRIKE PRICE", y="PUT GAMMA") %>%
                                             mjs_add_legend(legend = c("Gamma"))
 
@@ -545,7 +545,7 @@ sidebarLayout(
                                 tmp <- data.frame(Volatility = as.numeric(vol), Call.Gamma = as.numeric(gamma()))
                                 tmp %>%
                                     mjs_plot(x = Volatility, y = Call.Gamma) %>%
-                                        mjs_line() %>%
+                                        mjs_line(area=TRUE) %>%
                                             mjs_labs(x="VOLATILITY", y="CALL GAMMA") %>%
                                                 mjs_add_legend(legend = c("Gamma"))
 
@@ -561,7 +561,7 @@ sidebarLayout(
                                     tmp <- data.frame(Volatility = as.numeric(vol), Put.Gamma = as.numeric(gamma()))
                                     tmp %>%
                                         mjs_plot(x = Volatility, y = Put.Gamma) %>%
-                                            mjs_line() %>%
+                                            mjs_line(area=TRUE) %>%
                                                 mjs_labs(x="VOLATILITY", y="PUT GAMMA") %>%
                                                     mjs_add_legend(legend = c("Gamma"))
 
@@ -577,7 +577,7 @@ sidebarLayout(
                                         tmp <- data.frame(Risk_Free = as.numeric(rf), Call.Gamma = as.numeric(gamma()))
                                         tmp %>%
                                             mjs_plot(x = Risk_Free, y = Call.Gamma) %>%
-                                                mjs_line() %>%
+                                                mjs_line(area=TRUE) %>%
                                                     mjs_labs(x="RISK-FREE", y="CALL GAMMA") %>%
                                                         mjs_add_legend(legend = c("Gamma"))
 
@@ -593,7 +593,7 @@ sidebarLayout(
                                             tmp <- data.frame(Risk_Free = as.numeric(rf), Put.Gamma = as.numeric(gamma()))
                                             tmp %>%
                                                 mjs_plot(x = Risk_Free, y = Put.Gamma) %>%
-                                                    mjs_line() %>%
+                                                    mjs_line(area=TRUE) %>%
                                                         mjs_labs(x="RISK-FREE", y="PUT GAMMA") %>%
                                                             mjs_add_legend(legend = c("Gamma"))
 
@@ -609,7 +609,7 @@ sidebarLayout(
                                                 tmp <- data.frame(Time = as.numeric(time), Call.Gamma = as.numeric(gamma()))
                                                 tmp %>%
                                                     mjs_plot(x = Time, y = Call.Gamma) %>%
-                                                        mjs_line() %>%
+                                                        mjs_line(area=TRUE) %>%
                                                             mjs_labs(x="TIME", y="CALL GAMMA") %>%
                                                                 mjs_add_legend(legend = c("Gamma"))
 
@@ -625,7 +625,7 @@ sidebarLayout(
                                                     tmp <- data.frame(Time = as.numeric(time), Put.Gamma = as.numeric(gamma()))
                                                     tmp %>%
                                                         mjs_plot(x = Time, y = Put.Gamma) %>%
-                                                            mjs_line() %>%
+                                                            mjs_line(area=TRUE) %>%
                                                                 mjs_labs(x="TIME", y="PUT GAMMA") %>%
                                                                     mjs_add_legend(legend = c("Gamma"))
                                                 }
@@ -771,7 +771,7 @@ sidebarLayout(
                 ## names(data) <- c("Stock Price", "Theta")
                 tmp %>%
                     mjs_plot(x = Stock.Price, y = Call.Theta) %>%
-                        mjs_line() %>%
+                        mjs_line(area=TRUE) %>%
                             mjs_labs(x="STOCK PRICE", y="CALL THETA") %>%
                                 mjs_add_legend(legend = c("Theta"))
                 
@@ -787,7 +787,7 @@ sidebarLayout(
                     ## names(data) <- c("Stock Price", "Theta")
                     tmp %>%
                         mjs_plot(x = Stock.Price, y = Put.Theta) %>%
-                            mjs_line() %>%
+                            mjs_line(area=TRUE) %>%
                                 mjs_labs(x="STOCK PRICE", y="PUT THETA") %>%
                                     mjs_add_legend(legend = c("Theta"))
                     
@@ -802,7 +802,7 @@ sidebarLayout(
                         tmp <- data.frame(Strike.Price = as.numeric(strike), Call.Theta = as.numeric(theta.c()))
                         tmp %>%
                             mjs_plot(x = Strike.Price, y = Call.Theta) %>%
-                                mjs_line() %>%
+                                mjs_line(area=TRUE) %>%
                                     mjs_labs(x="STRIKE PRICE", y="CALL THETA")
                         
                     } else {
@@ -816,7 +816,7 @@ sidebarLayout(
                             tmp <- data.frame(Strike.Price = as.numeric(strike), Put.Theta = as.numeric(theta.p()))
                             tmp %>%
                                 mjs_plot(x = Strike.Price, y = Put.Theta) %>%
-                                    mjs_line() %>%
+                                    mjs_line(area=TRUE) %>%
                                         mjs_labs(x="STRIKE PRICE", y="PUT THETA") %>%
                                             mjs_add_legend(legend = c("Theta"))
 
@@ -832,7 +832,7 @@ sidebarLayout(
                                 tmp <- data.frame(Volatility = as.numeric(vol), Call.Theta = as.numeric(theta.c()))
                                 tmp %>%
                                     mjs_plot(x = Volatility, y = Call.Theta) %>%
-                                        mjs_line() %>%
+                                        mjs_line(area=TRUE) %>%
                                             mjs_labs(x="VOLATILITY", y="CALL THETA") %>%
                                                 mjs_add_legend(legend = c("Theta"))
 
@@ -848,7 +848,7 @@ sidebarLayout(
                                     tmp <- data.frame(Volatility = as.numeric(vol), Put.Theta = as.numeric(theta.p()))
                                     tmp %>%
                                         mjs_plot(x = Volatility, y = Put.Theta) %>%
-                                            mjs_line() %>%
+                                            mjs_line(area=TRUE) %>%
                                                 mjs_labs(x="VOLATILITY", y="PUT THETA") %>%
                                                     mjs_add_legend(legend = c("Theta"))
 
@@ -864,7 +864,7 @@ sidebarLayout(
                                         tmp <- data.frame(Risk_Free = as.numeric(rf), Call.Theta = as.numeric(theta.c()))
                                         tmp %>%
                                             mjs_plot(x = Risk_Free, y = Call.Theta) %>%
-                                                mjs_line() %>%
+                                                mjs_line(area=TRUE) %>%
                                                     mjs_labs(x="RISK-FREE", y="CALL THETA") %>%
                                                         mjs_add_legend(legend = c("Theta"))
 
@@ -880,7 +880,7 @@ sidebarLayout(
                                             tmp <- data.frame(Risk_Free = as.numeric(rf), Put.Theta = as.numeric(theta.p()))
                                             tmp %>%
                                                 mjs_plot(x = Risk_Free, y = Put.Theta) %>%
-                                                    mjs_line() %>%
+                                                    mjs_line(area=TRUE) %>%
                                                         mjs_labs(x="RISK-FREE", y="PUT THETA") %>%
                                                             mjs_add_legend(legend = c("Theta"))
 
@@ -896,7 +896,7 @@ sidebarLayout(
                                                 tmp <- data.frame(Time = as.numeric(time), Call.Theta = as.numeric(theta.c()))
                                                 tmp %>%
                                                     mjs_plot(x = Time, y = Call.Theta) %>%
-                                                        mjs_line() %>%
+                                                        mjs_line(area=TRUE) %>%
                                                             mjs_labs(x="TIME", y="CALL THETA") %>%
                                                                 mjs_add_legend(legend = c("Theta"))
 
@@ -912,7 +912,7 @@ sidebarLayout(
                                                     tmp <- data.frame(Time = as.numeric(time), Put.Theta = as.numeric(theta.p()))
                                                     tmp %>%
                                                         mjs_plot(x = Time, y = Put.Theta) %>%
-                                                            mjs_line() %>%
+                                                            mjs_line(area=TRUE) %>%
                                                                 mjs_labs(x="TIME", y="PUT THETA") %>%
                                                                     mjs_add_legend(legend = c("Theta"))
 
@@ -1059,7 +1059,7 @@ sidebarLayout(
                 ## names(data) <- c("Stock Price", "Rho")
                 tmp %>%
                     mjs_plot(x = Stock.Price, y = Call.Rho) %>%
-                        mjs_line() %>%
+                        mjs_line(area=TRUE) %>%
                             mjs_labs(x="STOCK PRICE", y="CALL RHO") %>%
                                 mjs_add_legend(legend = c("Rho"))
                 
@@ -1075,7 +1075,7 @@ sidebarLayout(
                     ## names(data) <- c("Stock Price", "Rho")
                     tmp %>%
                         mjs_plot(x = Stock.Price, y = Put.Rho) %>%
-                            mjs_line() %>%
+                            mjs_line(area=TRUE) %>%
                                 mjs_labs(x="STOCK PRICE", y="PUT RHO") %>%
                                     mjs_add_legend(legend = c("Rho"))
                     
@@ -1090,7 +1090,7 @@ sidebarLayout(
                         tmp <- data.frame(Strike.Price = as.numeric(strike), Call.Rho = as.numeric(rho.c()))
                         tmp %>%
                             mjs_plot(x = Strike.Price, y = Call.Rho) %>%
-                                mjs_line() %>%
+                                mjs_line(area=TRUE) %>%
                                     mjs_labs(x="STRIKE PRICE", y="CALL RHO")
                         
                     } else {
@@ -1104,7 +1104,7 @@ sidebarLayout(
                             tmp <- data.frame(Strike.Price = as.numeric(strike), Put.Rho = as.numeric(rho.p()))
                             tmp %>%
                                 mjs_plot(x = Strike.Price, y = Put.Rho) %>%
-                                    mjs_line() %>%
+                                    mjs_line(area=TRUE) %>%
                                         mjs_labs(x="STRIKE PRICE", y="PUT RHO") %>%
                                             mjs_add_legend(legend = c("Rho"))
 
@@ -1120,7 +1120,7 @@ sidebarLayout(
                                 tmp <- data.frame(Volatility = as.numeric(vol), Call.Rho = as.numeric(rho.c()))
                                 tmp %>%
                                     mjs_plot(x = Volatility, y = Call.Rho) %>%
-                                        mjs_line() %>%
+                                        mjs_line(area=TRUE) %>%
                                             mjs_labs(x="VOLATILITY", y="CALL RHO") %>%
                                                 mjs_add_legend(legend = c("Rho"))
 
@@ -1136,7 +1136,7 @@ sidebarLayout(
                                     tmp <- data.frame(Volatility = as.numeric(vol), Put.Rho = as.numeric(rho.p()))
                                     tmp %>%
                                         mjs_plot(x = Volatility, y = Put.Rho) %>%
-                                            mjs_line() %>%
+                                            mjs_line(area=TRUE) %>%
                                                 mjs_labs(x="VOLATILITY", y="PUT RHO") %>%
                                                     mjs_add_legend(legend = c("Rho"))
 
@@ -1152,7 +1152,7 @@ sidebarLayout(
                                         tmp <- data.frame(Risk_Free = as.numeric(rf), Call.Rho = as.numeric(rho.c()))
                                         tmp %>%
                                             mjs_plot(x = Risk_Free, y = Call.Rho) %>%
-                                                mjs_line() %>%
+                                                mjs_line(area=TRUE) %>%
                                                     mjs_labs(x="RISK-FREE", y="CALL RHO") %>%
                                                         mjs_add_legend(legend = c("Rho"))
 
@@ -1168,7 +1168,7 @@ sidebarLayout(
                                             tmp <- data.frame(Risk_Free = as.numeric(rf), Put.Rho = as.numeric(rho.p()))
                                             tmp %>%
                                                 mjs_plot(x = Risk_Free, y = Put.Rho) %>%
-                                                    mjs_line() %>%
+                                                    mjs_line(area=TRUE) %>%
                                                         mjs_labs(x="RISK-FREE", y="PUT RHO") %>%
                                                             mjs_add_legend(legend = c("Rho"))
 
@@ -1184,7 +1184,7 @@ sidebarLayout(
                                                 tmp <- data.frame(Time = as.numeric(time), Call.Rho = as.numeric(rho.c()))
                                                 tmp %>%
                                                     mjs_plot(x = Time, y = Call.Rho) %>%
-                                                        mjs_line() %>%
+                                                        mjs_line(area=TRUE) %>%
                                                             mjs_labs(x="TIME", y="CALL RHO") %>%
                                                                 mjs_add_legend(legend = c("Rho"))
 
@@ -1200,7 +1200,7 @@ sidebarLayout(
                                                     tmp <- data.frame(Time = as.numeric(time), Put.Rho = as.numeric(rho.p()))
                                                     tmp %>%
                                                         mjs_plot(x = Time, y = Put.Rho) %>%
-                                                            mjs_line() %>%
+                                                            mjs_line(area=TRUE) %>%
                                                                 mjs_labs(x="TIME", y="PUT RHO") %>%
                                                                     mjs_add_legend(legend = c("Rho"))
 
@@ -1349,7 +1349,7 @@ sidebarLayout(
                 ## names(data) <- c("Stock Price", "Vega")
                 tmp %>%
                     mjs_plot(x = Stock.Price, y = Call.Vega) %>%
-                        mjs_line() %>%
+                        mjs_line(area=TRUE) %>%
                             mjs_labs(x="STOCK PRICE", y="CALL VEGA") %>%
                                 mjs_add_legend(legend = c("Vega"))
                 
@@ -1365,7 +1365,7 @@ sidebarLayout(
                     ## names(data) <- c("Stock Price", "Vega")
                     tmp %>%
                         mjs_plot(x = Stock.Price, y = Put.Vega) %>%
-                            mjs_line() %>%
+                            mjs_line(area=TRUE) %>%
                                 mjs_labs(x="STOCK PRICE", y="PUT VEGA") %>%
                                     mjs_add_legend(legend = c("Vega"))
                     
@@ -1380,7 +1380,7 @@ sidebarLayout(
                         tmp <- data.frame(Strike.Price = as.numeric(strike), Call.Vega = as.numeric(vega()))
                         tmp %>%
                             mjs_plot(x = Strike.Price, y = Call.Vega) %>%
-                                mjs_line() %>%
+                                mjs_line(area=TRUE) %>%
                                     mjs_labs(x="STRIKE PRICE", y="CALL VEGA")
                         
                     } else {
@@ -1394,7 +1394,7 @@ sidebarLayout(
                             tmp <- data.frame(Strike.Price = as.numeric(strike), Put.Vega = as.numeric(vega()))
                             tmp %>%
                                 mjs_plot(x = Strike.Price, y = Put.Vega) %>%
-                                    mjs_line() %>%
+                                    mjs_line(area=TRUE) %>%
                                         mjs_labs(x="STRIKE PRICE", y="PUT VEGA") %>%
                                             mjs_add_legend(legend = c("Vega"))
 
@@ -1410,7 +1410,7 @@ sidebarLayout(
                                 tmp <- data.frame(Volatility = as.numeric(vol), Call.Vega = as.numeric(vega()))
                                 tmp %>%
                                     mjs_plot(x = Volatility, y = Call.Vega) %>%
-                                        mjs_line() %>%
+                                        mjs_line(area=TRUE) %>%
                                             mjs_labs(x="VOLATILITY", y="CALL VEGA") %>%
                                                 mjs_add_legend(legend = c("Vega"))
 
@@ -1426,7 +1426,7 @@ sidebarLayout(
                                     tmp <- data.frame(Volatility = as.numeric(vol), Put.Vega = as.numeric(vega()))
                                     tmp %>%
                                         mjs_plot(x = Volatility, y = Put.Vega) %>%
-                                            mjs_line() %>%
+                                            mjs_line(area=TRUE) %>%
                                                 mjs_labs(x="VOLATILITY", y="PUT VEGA") %>%
                                                     mjs_add_legend(legend = c("Vega"))
 
@@ -1442,7 +1442,7 @@ sidebarLayout(
                                         tmp <- data.frame(Risk_Free = as.numeric(rf), Call.Vega = as.numeric(vega()))
                                         tmp %>%
                                             mjs_plot(x = Risk_Free, y = Call.Vega) %>%
-                                                mjs_line() %>%
+                                                mjs_line(area=TRUE) %>%
                                                     mjs_labs(x="RISK-FREE", y="CALL VEGA") %>%
                                                         mjs_add_legend(legend = c("Vega"))
 
@@ -1458,7 +1458,7 @@ sidebarLayout(
                                             tmp <- data.frame(Risk_Free = as.numeric(rf), Put.Vega = as.numeric(vega()))
                                             tmp %>%
                                                 mjs_plot(x = Risk_Free, y = Put.Vega) %>%
-                                                    mjs_line() %>%
+                                                    mjs_line(area=TRUE) %>%
                                                         mjs_labs(x="RISK-FREE", y="PUT VEGA") %>%
                                                             mjs_add_legend(legend = c("Vega"))
 
@@ -1474,7 +1474,7 @@ sidebarLayout(
                                                 tmp <- data.frame(Time = as.numeric(time), Call.Vega = as.numeric(vega()))
                                                 tmp %>%
                                                     mjs_plot(x = Time, y = Call.Vega) %>%
-                                                        mjs_line() %>%
+                                                        mjs_line(area=TRUE) %>%
                                                             mjs_labs(x="TIME", y="CALL VEGA") %>%
                                                                 mjs_add_legend(legend = c("Vega"))
 
@@ -1490,7 +1490,7 @@ sidebarLayout(
                                                     tmp <- data.frame(Time = as.numeric(time), Put.Vega = as.numeric(vega()))
                                                     tmp %>%
                                                         mjs_plot(x = Time, y = Put.Vega) %>%
-                                                            mjs_line() %>%
+                                                            mjs_line(area=TRUE) %>%
                                                                 mjs_labs(x="TIME", y="PUT VEGA") %>%
                                                                     mjs_add_legend(legend = c("Vega"))
 
